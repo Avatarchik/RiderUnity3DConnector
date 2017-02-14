@@ -84,6 +84,8 @@ public class UnityConnectorServer {
                     final String[] splits = text.split("\r\n");
                     ApplicationManager.getApplication().invokeLater(() -> {
 
+                        ProjectUtil.focusProjectWindow(project,true);
+
                         String slnFilePath = splits[1];
                         SolutionOpenStrategy strategy = new OpenExistingSolution(slnFilePath, true);
                         project = RiderProjectOpenProcessor.Companion.doOpenSolution(null, false, strategy);
@@ -100,8 +102,6 @@ public class UnityConnectorServer {
                         }
 
                         new OpenFileDescriptor(project, vf, line, column).navigate(true);
-
-                        ProjectUtil.focusProjectWindow(project,true);
                     });
 
                     InetAddress senderAddress = datagramPacket.getAddress();

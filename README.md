@@ -1,4 +1,4 @@
-# DEPRECATED, This plugin is no longer needed.
+# DEPRECATED, this plugin is no longer needed.
 
 # RiderUnity3DConnector
 Rider Unity3D UDP connector to make file open/close much faster
